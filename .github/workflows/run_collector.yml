@@ -29,5 +29,5 @@ jobs:
   PHONE_NUMBER: ${{ secrets.PHONE_NUMBER }}
   GITHUB_TOKEN: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
   GITHUB_USERNAME: ${{ secrets.GITHUB_USERNAME }}
-      run: |
+     run: |
         python main.py
