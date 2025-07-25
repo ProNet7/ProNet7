@@ -1,6 +1,15 @@
 import os
+import asyncio
+from telethon import TelegramClient
 
-print("🧪 TESTING SECRETS:")
-print("API_ID:", os.getenv("API_ID"))
-print("API_HASH:", os.getenv("API_HASH"))
-print("PHONE_NUMBER:", os.getenv("PHONE_NUMBER"))
+api_id = int(os.getenv("API_ID"))
+api_hash = os.getenv("API_HASH")
+phone = os.getenv("PHONE_NUMBER")
+
+client = TelegramClient("anon", api_id, api_hash)
+
+async def main():
+    await client.start(phone=phone)
+    print("✅ Logged in successfully!")
+
+asyncio.run(main())
