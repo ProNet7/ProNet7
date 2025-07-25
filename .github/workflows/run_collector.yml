@@ -1,33 +1,6 @@
-name: Run ProNet7 Collector
-
-on:
-  schedule:
-    - cron: '0 */2 * * *'  # اجرای هر ۲ ساعت یک‌بار
-  workflow_dispatch:       # اجرا دستی هم ممکنه
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.10'
-
-    - name: Install dependencies
-      run: |
-        pip install -r requirements.txt
-
-    - name: Run main.py
-      env:
-        API_ID: ${{ secrets.API_ID }}
-        API_HASH: ${{ secrets.API_HASH }}
-        PHONE: ${{ secrets.PHONE }}
-        GITHUB_TOKEN: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
-        GITHUB_USERNAME: ${{ secrets.GITHUB_USERNAME }}
-      run: |
-        python main.py
+env:
+  API_ID: ${{ secrets.API_ID }}
+  API_HASH: ${{ secrets.API_HASH }}
+  PHONE_NUMBER: ${{ secrets.PHONE_NUMBER }}
+  GITHUB_TOKEN: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
+  GITHUB_USERNAME: ${{ secrets.GITHUB_USERNAME }}
