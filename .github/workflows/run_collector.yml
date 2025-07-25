@@ -24,10 +24,10 @@ jobs:
 
     - name: Run main.py
       env:
-        API_ID: ${{ secrets.API_ID }}
-        API_HASH: ${{ secrets.API_HASH }}
-        PHONE: ${{ secrets.PHONE }}
-        GITHUB_TOKEN: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
-        GITHUB_USERNAME: ${{ secrets.GITHUB_USERNAME }}
+  API_ID: ${{ secrets.API_ID }}
+  API_HASH: ${{ secrets.API_HASH }}
+  PHONE_NUMBER: ${{ secrets.PHONE_NUMBER }}
+  GITHUB_TOKEN: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
+  GITHUB_USERNAME: ${{ secrets.GITHUB_USERNAME }}
       run: |
         python main.py
